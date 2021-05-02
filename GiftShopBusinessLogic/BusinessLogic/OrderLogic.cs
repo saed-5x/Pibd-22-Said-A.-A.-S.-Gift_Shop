@@ -98,7 +98,7 @@ namespace GiftShopBusinessLogic.BusinessLogic
             {
                 throw new Exception("Order not in status \"Ready\"");
             }
-            _orderStorage.Update(new OrderBindingModel 
+            _orderStorage.Update(new OrderBindingModel
             {
                 Id = order.Id,
                 GiftId = order.GiftId,

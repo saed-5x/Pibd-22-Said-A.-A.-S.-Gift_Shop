@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.BusinessLogic;
@@ -32,7 +32,6 @@ namespace GiftShopView
                     dataGridView.Columns[1].Visible = false;
                     dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     dataGridView.Columns[3].Visible = false;
-                    
                 }
             }
             catch (Exception ex)

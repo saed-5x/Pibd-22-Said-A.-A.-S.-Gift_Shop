@@ -26,7 +26,7 @@ namespace GiftShopView
             try
             {
                 var list = _logicP.Read(null);
-                foreach (var p in list) 
+                foreach (var p in list)
                 {
                     comboBoxGift.DisplayMember = "GiftName";
                     comboBoxGift.ValueMember = "Id";

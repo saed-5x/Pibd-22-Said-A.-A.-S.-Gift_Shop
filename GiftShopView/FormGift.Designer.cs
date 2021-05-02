@@ -35,15 +35,15 @@ namespace GiftShopView
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.groupBoxComponents = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.DataGridViewTextBoxKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridBoxTextBoxColumnComponent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridViewTextBoxColumnCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonRefresh = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonRef = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.buttonUpd = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.DataGridViewTextBoxKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridBoxTextBoxColumnComponent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumnCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxComponents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -83,13 +83,13 @@ namespace GiftShopView
             // groupBoxComponents
             // 
             this.groupBoxComponents.Controls.Add(this.dataGridView);
-            this.groupBoxComponents.Controls.Add(this.buttonRefresh);
-            this.groupBoxComponents.Controls.Add(this.buttonDelete);
-            this.groupBoxComponents.Controls.Add(this.buttonUpdate);
+            this.groupBoxComponents.Controls.Add(this.buttonRef);
+            this.groupBoxComponents.Controls.Add(this.buttonDel);
+            this.groupBoxComponents.Controls.Add(this.buttonUpd);
             this.groupBoxComponents.Controls.Add(this.buttonAdd);
             this.groupBoxComponents.Location = new System.Drawing.Point(16, 107);
             this.groupBoxComponents.Name = "groupBoxComponents";
-            this.groupBoxComponents.Size = new System.Drawing.Size(535, 261);
+            this.groupBoxComponents.Size = new System.Drawing.Size(488, 261);
             this.groupBoxComponents.TabIndex = 4;
             this.groupBoxComponents.TabStop = false;
             this.groupBoxComponents.Text = "Components";
@@ -102,69 +102,48 @@ namespace GiftShopView
             this.DataGridViewTextBoxKey,
             this.DataGridBoxTextBoxColumnComponent,
             this.DataGridViewTextBoxColumnCount});
-            this.dataGridView.Location = new System.Drawing.Point(26, 22);
+            this.dataGridView.Location = new System.Drawing.Point(7, 22);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(343, 233);
+            this.dataGridView.Size = new System.Drawing.Size(344, 233);
             this.dataGridView.TabIndex = 4;
             // 
-            // DataGridViewTextBoxKey
+            // buttonRef
             // 
-            this.DataGridViewTextBoxKey.HeaderText = "";
-            this.DataGridViewTextBoxKey.Name = "DataGridViewTextBoxKey";
-            this.DataGridViewTextBoxKey.ReadOnly = true;
-            this.DataGridViewTextBoxKey.Visible = false;
+            this.buttonRef.Location = new System.Drawing.Point(407, 171);
+            this.buttonRef.Name = "buttonRef";
+            this.buttonRef.Size = new System.Drawing.Size(75, 23);
+            this.buttonRef.TabIndex = 3;
+            this.buttonRef.Text = "Refresh";
+            this.buttonRef.UseVisualStyleBackColor = true;
+            this.buttonRef.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
-            // DataGridBoxTextBoxColumnComponent
+            // buttonDel
             // 
-            this.DataGridBoxTextBoxColumnComponent.HeaderText = "Component";
-            this.DataGridBoxTextBoxColumnComponent.Name = "DataGridBoxTextBoxColumnComponent";
-            this.DataGridBoxTextBoxColumnComponent.ReadOnly = true;
-            this.DataGridBoxTextBoxColumnComponent.Width = 222;
+            this.buttonDel.Location = new System.Drawing.Point(407, 126);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(75, 23);
+            this.buttonDel.TabIndex = 2;
+            this.buttonDel.Text = "Delete";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
-            // DataGridViewTextBoxColumnCount
+            // buttonUpd
             // 
-            this.DataGridViewTextBoxColumnCount.HeaderText = "Count";
-            this.DataGridViewTextBoxColumnCount.Name = "DataGridViewTextBoxColumnCount";
-            this.DataGridViewTextBoxColumnCount.ReadOnly = true;
-            this.DataGridViewTextBoxColumnCount.Width = 111;
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Location = new System.Drawing.Point(427, 183);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
-            this.buttonRefresh.TabIndex = 3;
-            this.buttonRefresh.Text = "Refresh";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.ButtonRefresh_Click);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(427, 138);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 2;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Location = new System.Drawing.Point(427, 94);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpdate.TabIndex = 1;
-            this.buttonUpdate.Text = "Edit";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
+            this.buttonUpd.Location = new System.Drawing.Point(407, 82);
+            this.buttonUpd.Name = "buttonUpd";
+            this.buttonUpd.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpd.TabIndex = 1;
+            this.buttonUpd.Text = "Edit";
+            this.buttonUpd.UseVisualStyleBackColor = true;
+            this.buttonUpd.Click += new System.EventHandler(this.ButtonUpdate_Click);
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(427, 51);
+            this.buttonAdd.Location = new System.Drawing.Point(407, 39);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 0;
@@ -192,12 +171,33 @@ namespace GiftShopView
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // DataGridViewTextBoxKey
+            // 
+            this.DataGridViewTextBoxKey.HeaderText = "";
+            this.DataGridViewTextBoxKey.Name = "DataGridViewTextBoxKey";
+            this.DataGridViewTextBoxKey.ReadOnly = true;
+            this.DataGridViewTextBoxKey.Visible = false;
+            // 
+            // DataGridBoxTextBoxColumnComponent
+            // 
+            this.DataGridBoxTextBoxColumnComponent.HeaderText = "Component";
+            this.DataGridBoxTextBoxColumnComponent.Name = "DataGridBoxTextBoxColumnComponent";
+            this.DataGridBoxTextBoxColumnComponent.ReadOnly = true;
+            this.DataGridBoxTextBoxColumnComponent.Width = 222;
+            // 
+            // DataGridViewTextBoxColumnCount
+            // 
+            this.DataGridViewTextBoxColumnCount.HeaderText = "Count";
+            this.DataGridViewTextBoxColumnCount.Name = "DataGridViewTextBoxColumnCount";
+            this.DataGridViewTextBoxColumnCount.ReadOnly = true;
+            this.DataGridViewTextBoxColumnCount.Width = 111;
+            // 
             // FormGift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(568, 422);
+            this.ClientSize = new System.Drawing.Size(528, 422);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.groupBoxComponents);
@@ -223,9 +223,9 @@ namespace GiftShopView
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.GroupBox groupBoxComponents;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonRef;
+        private System.Windows.Forms.Button buttonDel;
+        private System.Windows.Forms.Button buttonUpd;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;

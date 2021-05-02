@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using GiftShopBusinessLogic.BindingModels;
@@ -100,7 +100,6 @@ namespace GiftShopListImplement.Implements
         {
             gift.GiftName = model.GiftName;
             gift.Price = model.Price;
-        
             foreach (var key in gift.GiftComponents.Keys.ToList())
             {
                 if (!model.GiftComponents.ContainsKey(key))
@@ -108,7 +107,7 @@ namespace GiftShopListImplement.Implements
                     gift.GiftComponents.Remove(key);
                 }
             }
-            
+
             foreach (var component in model.GiftComponents)
             {
                 if (gift.GiftComponents.ContainsKey(component.Key))
@@ -124,7 +123,6 @@ namespace GiftShopListImplement.Implements
         }
         private GiftViewModel CreateModel(Gift gift)
         {
-            
             Dictionary<int, (string, int)> giftComponents = new Dictionary<int, (string, int)>();
             foreach (var pc in gift.GiftComponents)
             {
