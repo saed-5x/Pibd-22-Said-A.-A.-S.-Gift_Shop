@@ -1,4 +1,3 @@
-﻿
 namespace GiftShopView
 {
     partial class FormGifts
@@ -116,5 +115,6 @@ namespace GiftShopView
         private System.Windows.Forms.Button buttonUpd;
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.Button buttonRef;
+
     }
 }

@@ -1,4 +1,3 @@
-﻿
 namespace GiftShopView
 {
     partial class FormMain
