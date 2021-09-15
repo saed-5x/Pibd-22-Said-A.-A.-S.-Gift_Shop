@@ -17,11 +17,18 @@ namespace GiftShopBusinessLogic.ViewModels
         public int ClientId { get; set; }
 
         [DataMember]
+        public int? ImplementerId { get; set; }
+
+        [DataMember]
         public int GiftId { get; set; }
 
         [DataMember]
         [DisplayName("Client")]
         public string ClientFIO { get; set; }
+
+        [DataMember]
+        [DisplayName("Artist")]
+        public string ImplementerFIO { get; set; }
 
         [DataMember]
         [DisplayName("Product")]

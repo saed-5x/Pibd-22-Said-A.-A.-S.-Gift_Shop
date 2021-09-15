@@ -20,27 +20,37 @@ namespace GiftShopView
         public new IUnityContainer Container { get; set; }
         private readonly GiftLogic _logicP;
         private readonly OrderLogic _logicO;
+        private readonly ClientLogic _logicC;
 
-        public FormCreateOrder(GiftLogic logicP, OrderLogic logicO)
+        public FormCreateOrder(GiftLogic logicP, OrderLogic logicO, ClientLogic logicC)
         {
             InitializeComponent();
             _logicP = logicP;
             _logicO = logicO;
+            _logicC = logicC;
         }
 
         private void FormCreateOrder_Load(object sender, EventArgs e)
         {
             try
             {
-                var list = _logicP.Read(null);
-                foreach (var p in list) 
+                var listGifts = _logicP.Read(null);
+                foreach (var p in listGifts)
                 {
                     comboBoxGift.DisplayMember = "GiftName";
                     comboBoxGift.ValueMember = "Id";
-                    comboBoxGift.DataSource = list;
+                    comboBoxGift.DataSource = listGifts;
                     comboBoxGift.SelectedItem = null;
                 }
 
+                var listClients = _logicC.Read(null);
+                foreach (var client in listClients)
+                {
+                    comboBoxClient.DisplayMember = "ClientFIO";
+                    comboBoxClient.ValueMember = "Id";
+                    comboBoxClient.DataSource = listClients;
+                    comboBoxClient.SelectedItem = null;
+                }
             }
             catch (Exception ex)
             {
@@ -88,15 +98,22 @@ namespace GiftShopView
                 MessageBox.Show("Select a product", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (comboBoxClient.SelectedValue == null)
+            {
+                MessageBox.Show("Select client", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 _logicO.CreateOrder(new CreateOrderBindingModel
                 {
+                    ClientId = Convert.ToInt32(comboBoxClient.SelectedValue),
                     GiftId = Convert.ToInt32(comboBoxGift.SelectedValue),
                     Count = Convert.ToInt32(textBoxCount.Text),
                     Sum = Convert.ToDecimal(textBoxSum.Text)
                 });
-                MessageBox.Show("Saving was successful", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Save was successful", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
             }

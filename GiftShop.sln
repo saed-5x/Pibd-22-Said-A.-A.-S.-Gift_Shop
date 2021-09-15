@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopListImplement", "Gi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopFileImplement", "GiftShopFileImplement\GiftShopFileImplement.csproj", "{DBB24DD3-A6A3-4176-B194-F27439E75C5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopDatabaseImplement", "GiftShopDatabaseImplement\GiftShopDatabaseImplement.csproj", "{20790FFF-57F0-4D9A-9087-C6280D32CAEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopRestApi", "GiftShopRestApi\GiftShopRestApi.csproj", "{4E273E73-A9AB-4B81-A046-DD351E23894F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopClientApp", "GiftShopClientApp\GiftShopClientApp.csproj", "{697F677D-268B-4012-A076-C7096F99C93A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopRestApi", "GiftShopRestApi\GiftShopRestApi.csproj", "{E4ED2272-7DF2-4F7B-9C06-134095CA3D6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopDatabaseImplement", "GiftShopDatabaseImplement\GiftShopDatabaseImplement.csproj", "{B338E80A-053F-42D8-B2FF-9ECB0A31040A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,18 +39,18 @@ Global
 		{DBB24DD3-A6A3-4176-B194-F27439E75C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBB24DD3-A6A3-4176-B194-F27439E75C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBB24DD3-A6A3-4176-B194-F27439E75C5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20790FFF-57F0-4D9A-9087-C6280D32CAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20790FFF-57F0-4D9A-9087-C6280D32CAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20790FFF-57F0-4D9A-9087-C6280D32CAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20790FFF-57F0-4D9A-9087-C6280D32CAEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E273E73-A9AB-4B81-A046-DD351E23894F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E273E73-A9AB-4B81-A046-DD351E23894F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E273E73-A9AB-4B81-A046-DD351E23894F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E273E73-A9AB-4B81-A046-DD351E23894F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{697F677D-268B-4012-A076-C7096F99C93A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{697F677D-268B-4012-A076-C7096F99C93A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{697F677D-268B-4012-A076-C7096F99C93A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{697F677D-268B-4012-A076-C7096F99C93A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E4ED2272-7DF2-4F7B-9C06-134095CA3D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4ED2272-7DF2-4F7B-9C06-134095CA3D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4ED2272-7DF2-4F7B-9C06-134095CA3D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4ED2272-7DF2-4F7B-9C06-134095CA3D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B338E80A-053F-42D8-B2FF-9ECB0A31040A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B338E80A-053F-42D8-B2FF-9ECB0A31040A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B338E80A-053F-42D8-B2FF-9ECB0A31040A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B338E80A-053F-42D8-B2FF-9ECB0A31040A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

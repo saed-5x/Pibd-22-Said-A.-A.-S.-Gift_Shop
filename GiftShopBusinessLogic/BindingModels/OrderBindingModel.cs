@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using System.Text;
 using GiftShopBusinessLogic.Enums;
+using System.Runtime.Serialization;
 
 namespace GiftShopBusinessLogic.BindingModels
 {
-
     [DataContract]
     public class OrderBindingModel
     {
@@ -18,6 +17,9 @@ namespace GiftShopBusinessLogic.BindingModels
 
         [DataMember]
         public int GiftId { get; set; }
+
+        [DataMember]
+        public int? ImplementerId { get; set; }
 
         [DataMember]
         public int Count { get; set; }
@@ -39,5 +41,7 @@ namespace GiftShopBusinessLogic.BindingModels
 
         [DataMember]
         public DateTime? DateTo { get; set; }
+
+        public bool? FreeOrders { get; set; }
     }
 }

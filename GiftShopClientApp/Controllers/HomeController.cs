@@ -1,11 +1,8 @@
 ﻿using GiftShopClientApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.ViewModels;
 
@@ -54,7 +51,7 @@ namespace GiftShopClientApp.Controllers
                 Response.Redirect("Index");
                 return;
             }
-            throw new Exception("Enter your username, password and full name");
+            throw new Exception("Введите логин, пароль и ФИО");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -77,12 +74,12 @@ namespace GiftShopClientApp.Controllers
                 Program.Client = APIClient.GetRequest<ClientViewModel>($"api/client/login?login={login}&password={password}");
                 if (Program.Client == null)
                 {
-                    throw new Exception("Invalid username / password");
+                    throw new Exception("Неверный логин/пароль");
                 }
                 Response.Redirect("Index");
                 return;
             }
-            throw new Exception("Enter login, password");
+            throw new Exception("Введите логин, пароль");
         }
 
         [HttpGet]
@@ -105,7 +102,7 @@ namespace GiftShopClientApp.Controllers
                 Response.Redirect("Enter");
                 return;
             }
-            throw new Exception("Enter your username, password and full name");
+            throw new Exception("Введите логин, пароль и ФИО");
         }
 
         [HttpGet]
