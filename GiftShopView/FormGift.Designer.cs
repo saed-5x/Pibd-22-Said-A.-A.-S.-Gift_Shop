@@ -53,18 +53,18 @@ namespace GiftShopView
             this.labelName.AutoSize = true;
             this.labelName.Location = new System.Drawing.Point(13, 13);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(38, 13);
+            this.labelName.Size = new System.Drawing.Size(41, 13);
             this.labelName.TabIndex = 0;
-            this.labelName.Text = "Name:";
+            this.labelName.Text = "Name :";
             // 
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Location = new System.Drawing.Point(13, 54);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(34, 13);
+            this.labelPrice.Size = new System.Drawing.Size(37, 13);
             this.labelPrice.TabIndex = 1;
-            this.labelPrice.Text = "Price:";
+            this.labelPrice.Text = "Price :";
             // 
             // textBoxName
             // 
@@ -89,13 +89,15 @@ namespace GiftShopView
             this.groupBoxComponents.Controls.Add(this.buttonAdd);
             this.groupBoxComponents.Location = new System.Drawing.Point(16, 107);
             this.groupBoxComponents.Name = "groupBoxComponents";
-            this.groupBoxComponents.Size = new System.Drawing.Size(488, 261);
+            this.groupBoxComponents.Size = new System.Drawing.Size(448, 261);
             this.groupBoxComponents.TabIndex = 4;
             this.groupBoxComponents.TabStop = false;
             this.groupBoxComponents.Text = "Components";
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -104,46 +106,45 @@ namespace GiftShopView
             this.DataGridViewTextBoxColumnCount});
             this.dataGridView.Location = new System.Drawing.Point(7, 22);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(344, 233);
+            this.dataGridView.Size = new System.Drawing.Size(336, 233);
             this.dataGridView.TabIndex = 4;
             // 
             // buttonRef
             // 
-            this.buttonRef.Location = new System.Drawing.Point(407, 171);
+            this.buttonRef.Location = new System.Drawing.Point(361, 163);
             this.buttonRef.Name = "buttonRef";
             this.buttonRef.Size = new System.Drawing.Size(75, 23);
             this.buttonRef.TabIndex = 3;
             this.buttonRef.Text = "Refresh";
             this.buttonRef.UseVisualStyleBackColor = true;
-            this.buttonRef.Click += new System.EventHandler(this.ButtonRefresh_Click);
+            this.buttonRef.Click += new System.EventHandler(this.ButtonRef_Click);
             // 
             // buttonDel
             // 
-            this.buttonDel.Location = new System.Drawing.Point(407, 126);
+            this.buttonDel.Location = new System.Drawing.Point(361, 118);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(75, 23);
             this.buttonDel.TabIndex = 2;
             this.buttonDel.Text = "Delete";
             this.buttonDel.UseVisualStyleBackColor = true;
-            this.buttonDel.Click += new System.EventHandler(this.ButtonDelete_Click);
+            this.buttonDel.Click += new System.EventHandler(this.ButtonDel_Click);
             // 
             // buttonUpd
             // 
-            this.buttonUpd.Location = new System.Drawing.Point(407, 82);
+            this.buttonUpd.Location = new System.Drawing.Point(361, 74);
             this.buttonUpd.Name = "buttonUpd";
             this.buttonUpd.Size = new System.Drawing.Size(75, 23);
             this.buttonUpd.TabIndex = 1;
             this.buttonUpd.Text = "Edit";
             this.buttonUpd.UseVisualStyleBackColor = true;
-            this.buttonUpd.Click += new System.EventHandler(this.ButtonUpdate_Click);
+            this.buttonUpd.Click += new System.EventHandler(this.ButtonUpd_Click);
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(407, 39);
+            this.buttonAdd.Location = new System.Drawing.Point(361, 31);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 0;
@@ -153,7 +154,7 @@ namespace GiftShopView
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(310, 384);
+            this.buttonSave.Location = new System.Drawing.Point(263, 384);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 5;
@@ -163,7 +164,7 @@ namespace GiftShopView
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(402, 384);
+            this.buttonCancel.Location = new System.Drawing.Point(364, 384);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 6;
@@ -175,21 +176,18 @@ namespace GiftShopView
             // 
             this.DataGridViewTextBoxKey.HeaderText = "";
             this.DataGridViewTextBoxKey.Name = "DataGridViewTextBoxKey";
-            this.DataGridViewTextBoxKey.ReadOnly = true;
             this.DataGridViewTextBoxKey.Visible = false;
             // 
             // DataGridBoxTextBoxColumnComponent
             // 
             this.DataGridBoxTextBoxColumnComponent.HeaderText = "Component";
             this.DataGridBoxTextBoxColumnComponent.Name = "DataGridBoxTextBoxColumnComponent";
-            this.DataGridBoxTextBoxColumnComponent.ReadOnly = true;
             this.DataGridBoxTextBoxColumnComponent.Width = 222;
             // 
             // DataGridViewTextBoxColumnCount
             // 
-            this.DataGridViewTextBoxColumnCount.HeaderText = "Count";
+            this.DataGridViewTextBoxColumnCount.HeaderText = "Quantity";
             this.DataGridViewTextBoxColumnCount.Name = "DataGridViewTextBoxColumnCount";
-            this.DataGridViewTextBoxColumnCount.ReadOnly = true;
             this.DataGridViewTextBoxColumnCount.Width = 111;
             // 
             // FormGift
@@ -197,7 +195,7 @@ namespace GiftShopView
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(528, 422);
+            this.ClientSize = new System.Drawing.Size(475, 422);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.groupBoxComponents);

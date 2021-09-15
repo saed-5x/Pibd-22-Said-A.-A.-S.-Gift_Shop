@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.BusinessLogic;
@@ -43,7 +50,7 @@ namespace GiftShopView
         {
             if (string.IsNullOrEmpty(textBoxName.Text))
             {
-                MessageBox.Show("Fill the name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill in the title", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -53,7 +60,7 @@ namespace GiftShopView
                     Id = id,
                     ComponentName = textBoxName.Text
                 });
-                MessageBox.Show("Save was successful", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Saving was successful", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
             }

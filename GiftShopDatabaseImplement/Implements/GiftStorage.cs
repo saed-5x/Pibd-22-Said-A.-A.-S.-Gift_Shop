@@ -160,10 +160,10 @@ namespace GiftShopDatabaseImplement.Implements
             if (model.Id.HasValue)
             {
                 var productComponents = context.GiftComponents.Where(rec => rec.GiftId == model.Id.Value).ToList();
-               
+                // удалили те, которых нет в модели
                 context.GiftComponents.RemoveRange(productComponents.Where(rec => !model.GiftComponents.ContainsKey(rec.ComponentId)).ToList());
                 context.SaveChanges();
-                
+                // обновили количество у существующих записей
                 foreach (var updateComponent in productComponents)
                 {
                     updateComponent.Count = model.GiftComponents[updateComponent.ComponentId].Item2;
@@ -171,7 +171,7 @@ namespace GiftShopDatabaseImplement.Implements
                 }
                 context.SaveChanges();
             }
-       
+            // добавили новые
             foreach (var pc in model.GiftComponents)
             {
                 context.GiftComponents.Add(new GiftComponent

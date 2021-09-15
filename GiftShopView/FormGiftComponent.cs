@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,12 +38,12 @@ namespace GiftShopView
         {
             if (string.IsNullOrEmpty(textBoxCount.Text))
             {
-                MessageBox.Show("Заполните поле Количество", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill in the Quantity field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (comboBoxComponent.SelectedValue == null)
             {
-                MessageBox.Show("Выберите компонент", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select component", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DialogResult = DialogResult.OK;

@@ -1,10 +1,10 @@
-﻿using GiftShopBusinessLogic.BindingModels;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.Interfaces;
 using GiftShopBusinessLogic.ViewModels;
 using GiftShopFileImplement.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace GiftShopFileImplement.Implements
 {
@@ -77,7 +77,7 @@ namespace GiftShopFileImplement.Implements
         {
             gift.GiftName = model.GiftName;
             gift.Price = model.Price;
-
+            // удаляем убранные
             foreach (var key in gift.GiftComponents.Keys.ToList())
             {
                 if (!model.GiftComponents.ContainsKey(key))
@@ -85,7 +85,7 @@ namespace GiftShopFileImplement.Implements
                     gift.GiftComponents.Remove(key);
                 }
             }
-
+            // обновляем существуюущие и добавляем новые
             foreach (var component in model.GiftComponents)
             {
                 if (gift.GiftComponents.ContainsKey(component.Key))

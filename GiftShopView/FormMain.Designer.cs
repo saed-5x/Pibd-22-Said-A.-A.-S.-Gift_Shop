@@ -1,3 +1,6 @@
+﻿
+using System;
+
 namespace GiftShopView
 {
     partial class FormMain
@@ -32,6 +35,10 @@ namespace GiftShopView
             this.DirectoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ListofProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProductsbyComponentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ListofOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateOrder = new System.Windows.Forms.Button();
             this.buttonTakeOrderInWork = new System.Windows.Forms.Button();
             this.buttonOrderReady = new System.Windows.Forms.Button();
@@ -45,7 +52,8 @@ namespace GiftShopView
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DirectoriesToolStripMenuItem});
+            this.DirectoriesToolStripMenuItem,
+            this.ReportsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -74,6 +82,37 @@ namespace GiftShopView
             this.ProductsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ProductsToolStripMenuItem.Text = "Products";
             this.ProductsToolStripMenuItem.Click += new System.EventHandler(this.ProductsToolStripMenuItem_Click);
+            // 
+            // ReportsToolStripMenuItem
+            // 
+            this.ReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ListofProductsToolStripMenuItem,
+            this.ProductsbyComponentToolStripMenuItem,
+            this.ListofOrdersToolStripMenuItem});
+            this.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem";
+            this.ReportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.ReportsToolStripMenuItem.Text = "Reports";
+            // 
+            // ListofProductsToolStripMenuItem
+            // 
+            this.ListofProductsToolStripMenuItem.Name = "ListofProductsToolStripMenuItem";
+            this.ListofProductsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.ListofProductsToolStripMenuItem.Text = "List of products";
+            this.ListofProductsToolStripMenuItem.Click += new System.EventHandler(this.ListofProductsToolStripMenuItem_Click);
+            // 
+            // ProductsbyComponentToolStripMenuItem
+            // 
+            this.ProductsbyComponentToolStripMenuItem.Name = "ProductsbyComponentToolStripMenuItem";
+            this.ProductsbyComponentToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.ProductsbyComponentToolStripMenuItem.Text = "Products by component";
+            this.ProductsbyComponentToolStripMenuItem.Click += new System.EventHandler(this.ProductsByComponentsToolStripMenuItem_Click);
+            // 
+            // ListofOrdersToolStripMenuItem
+            // 
+            this.ListofOrdersToolStripMenuItem.Name = "ListofOrdersToolStripMenuItem";
+            this.ListofOrdersToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.ListofOrdersToolStripMenuItem.Text = "List of oreders";
+            this.ListofOrdersToolStripMenuItem.Click += new System.EventHandler(this.ListofOrdersToolStripMenuItem_Click);
             // 
             // buttonCreateOrder
             // 
@@ -123,15 +162,16 @@ namespace GiftShopView
             this.buttonRef.TabIndex = 5;
             this.buttonRef.Text = "Refresh list";
             this.buttonRef.UseVisualStyleBackColor = true;
-            this.buttonRef.Click += new System.EventHandler(this.ButtonRefresh_Click);
+            this.buttonRef.Click += new System.EventHandler(this.ButtonRef_Click);
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(0, 28);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -153,7 +193,7 @@ namespace GiftShopView
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormMain";
-            this.Text = "Gift Shop";
+            this.Text = "Gift shop";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -175,5 +215,9 @@ namespace GiftShopView
         private System.Windows.Forms.Button buttonPayOrder;
         private System.Windows.Forms.Button buttonRef;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.ToolStripMenuItem ReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ListofOrdersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ProductsbyComponentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ListofProductsToolStripMenuItem;
     }
 }

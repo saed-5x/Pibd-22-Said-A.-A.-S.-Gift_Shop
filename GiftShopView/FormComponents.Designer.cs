@@ -39,16 +39,11 @@ namespace GiftShopView
             // 
             // dataGridView
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(1, 0);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(458, 449);
             this.dataGridView.TabIndex = 0;
             // 
@@ -70,7 +65,7 @@ namespace GiftShopView
             this.buttonUpd.TabIndex = 2;
             this.buttonUpd.Text = "Edit";
             this.buttonUpd.UseVisualStyleBackColor = true;
-            this.buttonUpd.Click += new System.EventHandler(this.ButtonUpdate_Click);
+            this.buttonUpd.Click += new System.EventHandler(this.ButtonUpd_Click);
             // 
             // buttonDel
             // 
@@ -80,7 +75,7 @@ namespace GiftShopView
             this.buttonDel.TabIndex = 3;
             this.buttonDel.Text = "Delete";
             this.buttonDel.UseVisualStyleBackColor = true;
-            this.buttonDel.Click += new System.EventHandler(this.ButtonDelete_Click);
+            this.buttonDel.Click += new System.EventHandler(this.ButtonDel_Click);
             // 
             // buttonRef
             // 
@@ -90,7 +85,7 @@ namespace GiftShopView
             this.buttonRef.TabIndex = 4;
             this.buttonRef.Text = "Refresh";
             this.buttonRef.UseVisualStyleBackColor = true;
-            this.buttonRef.Click += new System.EventHandler(this.ButtonRefresh_Click);
+            this.buttonRef.Click += new System.EventHandler(this.ButtonRef_Click);
             // 
             // FormComponents
             // 

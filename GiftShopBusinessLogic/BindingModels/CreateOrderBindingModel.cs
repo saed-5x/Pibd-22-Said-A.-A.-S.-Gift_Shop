@@ -1,4 +1,8 @@
-﻿namespace GiftShopBusinessLogic.BindingModels
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace GiftShopBusinessLogic.BindingModels
 {
     public class CreateOrderBindingModel
     {

@@ -1,5 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.BusinessLogic;
@@ -85,7 +91,7 @@ namespace GiftShopView
             }
         }
 
-        private void ButtonUpdate_Click(object sender, EventArgs e)
+        private void ButtonUpd_Click(object sender, EventArgs e)
         {
             if (dataGridView.SelectedRows.Count == 1)
             {
@@ -101,11 +107,11 @@ namespace GiftShopView
             }
         }
 
-        private void ButtonDelete_Click(object sender, EventArgs e)
+        private void ButtonDel_Click(object sender, EventArgs e)
         {
             if (dataGridView.SelectedRows.Count == 1)
             {
-                if (MessageBox.Show("Delete list", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Delete entry", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
@@ -120,7 +126,7 @@ namespace GiftShopView
             }
         }
 
-        private void ButtonRefresh_Click(object sender, EventArgs e)
+        private void ButtonRef_Click(object sender, EventArgs e)
         {
             LoadData();
         }
@@ -129,17 +135,17 @@ namespace GiftShopView
         {
             if (string.IsNullOrEmpty(textBoxName.Text))
             {
-                MessageBox.Show("Fill the name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill in the title", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (string.IsNullOrEmpty(textBoxPrice.Text))
             {
-                MessageBox.Show("Fill the price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill in the price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (giftComponents == null || giftComponents.Count == 0)
             {
-                MessageBox.Show("Fill the components", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill in the components", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -151,7 +157,7 @@ namespace GiftShopView
                     Price = Convert.ToDecimal(textBoxPrice.Text),
                     GiftComponents = giftComponents
                 });
-                MessageBox.Show("Save was successful", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Saving was successful", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
             }

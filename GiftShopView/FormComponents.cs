@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.BusinessLogic;
@@ -50,7 +57,7 @@ namespace GiftShopView
             }
         }
 
-        private void ButtonUpdate_Click(object sender, EventArgs e)
+        private void ButtonUpd_Click(object sender, EventArgs e)
         {
             if (dataGridView.SelectedRows.Count == 1)
             {
@@ -63,7 +70,7 @@ namespace GiftShopView
             }
         }
 
-        private void ButtonDelete_Click(object sender, EventArgs e)
+        private void ButtonDel_Click(object sender, EventArgs e)
         {
             if (dataGridView.SelectedRows.Count == 1)
             {
@@ -83,7 +90,7 @@ namespace GiftShopView
             }
         }
 
-        private void ButtonRefresh_Click(object sender, EventArgs e)
+        private void ButtonRef_Click(object sender, EventArgs e)
         {
             LoadData();
         }
