@@ -23,12 +23,15 @@ namespace GiftShopView
 
         private readonly WorkModeling workModeling;
 
-        public FormMain(OrderLogic orderLogic, ReportLogic reportLogic, WorkModeling modeling)
+        private BackUpAbstractLogic _backUpAbstractLogic;
+
+        public FormMain(OrderLogic orderLogic, ReportLogic reportLogic, WorkModeling modeling, BackUpAbstractLogic backUp)
         {
             InitializeComponent();
             this._orderLogic = orderLogic;
             this._reportLogic = reportLogic;
             this.workModeling = modeling;
+            this._backUpAbstractLogic = backUp;
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -38,14 +41,7 @@ namespace GiftShopView
         {
             try
             {
-                var list = _orderLogic.Read(null);
-                if (list != null)
-                {
-                    dataGridView.DataSource = list;
-                    dataGridView.Columns[0].Visible = false;
-                    dataGridView.Columns[1].Visible = false;
-                    dataGridView.Columns[2].Visible = false;
-                }
+                Program.ConfigGrid(_orderLogic.Read(null), dataGridView);
             }
             catch (Exception ex)
             {
@@ -140,6 +136,26 @@ namespace GiftShopView
         {
             var form = Container.Resolve<FormMails>();
             form.ShowDialog();
+        }
+
+        private void makeBackupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_backUpAbstractLogic != null)
+                {
+                    var fbd = new FolderBrowserDialog();
+                    if (fbd.ShowDialog() == DialogResult.OK)
+                    {
+                        _backUpAbstractLogic.CreateArchive(fbd.SelectedPath);
+                        MessageBox.Show("Backup created", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

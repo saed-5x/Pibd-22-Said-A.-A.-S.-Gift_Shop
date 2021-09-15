@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using System.Runtime.Serialization;
+using GiftShopBusinessLogic.Attributes;
 
 namespace GiftShopBusinessLogic.ViewModels
 {
@@ -10,16 +11,15 @@ namespace GiftShopBusinessLogic.ViewModels
     public class GiftViewModel
     {
         [DataMember]
+        [Column(title: "Number", width: 100, visible: false)]
         public int Id { get; set; }
 
         [DataMember]
-        [DisplayName("Product name")]
-
+        [Column(title: "Product name", gridViewAutoSize: GridViewAutoSize.Fill)]
         public string GiftName { get; set; }
 
         [DataMember]
-        [DisplayName("Price")]
-
+        [Column(title: "Price", width: 100)]
         public decimal Price { get; set; }
 
         [DataMember]

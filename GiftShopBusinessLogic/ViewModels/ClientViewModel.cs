@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.Serialization;
+using GiftShopBusinessLogic.Attributes;
 
 namespace GiftShopBusinessLogic.ViewModels
 {
@@ -10,18 +8,19 @@ namespace GiftShopBusinessLogic.ViewModels
     public class ClientViewModel
     {
         [DataMember]
+        [Column(title: "Number", width: 100, visible: false)]
         public int Id { get; set; }
 
         [DataMember]
-        [DisplayName("Client name")]
+        [Column(title: "Client name", gridViewAutoSize: GridViewAutoSize.Fill)]
         public string ClientFIO { get; set; }
 
         [DataMember]
-        [DisplayName("Login")]
+        [Column(title: "Login", width: 150)]
         public string Email { get; set; }
 
         [DataMember]
-        [DisplayName("Password")]
+        [Column(title: "Password", width: 150)]
         public string Password { get; set; }
     }
 }

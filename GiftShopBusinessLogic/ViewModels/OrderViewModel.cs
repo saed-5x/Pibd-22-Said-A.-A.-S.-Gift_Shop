@@ -4,6 +4,7 @@ using System.Text;
 using GiftShopBusinessLogic.Enums;
 using System.ComponentModel;
 using System.Runtime.Serialization;
+using GiftShopBusinessLogic.Attributes;
 
 namespace GiftShopBusinessLogic.ViewModels
 {
@@ -11,6 +12,7 @@ namespace GiftShopBusinessLogic.ViewModels
     public class OrderViewModel
     {
         [DataMember]
+        [Column(title: "Number", width: 100, visible: false)]
         public int Id { get; set; }
 
         [DataMember]
@@ -23,35 +25,35 @@ namespace GiftShopBusinessLogic.ViewModels
         public int GiftId { get; set; }
 
         [DataMember]
-        [DisplayName("Client")]
+        [Column(title: "Client", width: 150)]
         public string ClientFIO { get; set; }
 
         [DataMember]
-        [DisplayName("Artist")]
+        [Column(title: "Artist", width: 150)]
         public string ImplementerFIO { get; set; }
 
         [DataMember]
-        [DisplayName("Product")]
+        [Column(title: "Product", width: 150)]
         public string GiftName { get; set; }
 
         [DataMember]
-        [DisplayName("Quantity")]
+        [Column(title: "Quantity", width: 100)]
         public int Count { get; set; }
 
         [DataMember]
-        [DisplayName("Sum")]
+        [Column(title: "Sum", width: 50)]
         public decimal Sum { get; set; }
 
         [DataMember]
-        [DisplayName("Status")]
+        [Column(title: "Status", width: 100)]
         public OrderStatus Status { get; set; }
 
         [DataMember]
-        [DisplayName("Date Create")]
+        [Column(title: "Date Create", width: 100)]
         public DateTime DateCreate { get; set; }
 
         [DataMember]
-        [DisplayName("Date Implement")]
+        [Column(title: "Date Implement", width: 100)]
         public DateTime? DateImplement { get; set; }
     }
 }
