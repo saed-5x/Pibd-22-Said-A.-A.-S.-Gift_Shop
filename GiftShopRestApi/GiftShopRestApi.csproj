@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>bde63a6e-9e91-415e-bf75-5e426e472eb4</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GiftShopBusinessLogic\GiftShopBusinessLogic.csproj" />
+    <ProjectReference Include="..\GiftShopDatabaseImplement\GiftShopDatabaseImplement.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -35,6 +35,7 @@ namespace GiftShopView
             this.DirectoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListofProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductsbyComponentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,7 @@ namespace GiftShopView
             this.ReportsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.Size = new System.Drawing.Size(904, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -64,7 +65,8 @@ namespace GiftShopView
             // 
             this.DirectoriesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ComponentsToolStripMenuItem,
-            this.ProductsToolStripMenuItem});
+            this.ProductsToolStripMenuItem,
+            this.ClientsToolStripMenuItem});
             this.DirectoriesToolStripMenuItem.Name = "DirectoriesToolStripMenuItem";
             this.DirectoriesToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.DirectoriesToolStripMenuItem.Text = "Directories";
@@ -82,6 +84,13 @@ namespace GiftShopView
             this.ProductsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ProductsToolStripMenuItem.Text = "Products";
             this.ProductsToolStripMenuItem.Click += new System.EventHandler(this.ProductsToolStripMenuItem_Click);
+            // 
+            // ClientsToolStripMenuItem
+            // 
+            this.ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem";
+            this.ClientsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.ClientsToolStripMenuItem.Text = "Clients";
+            this.ClientsToolStripMenuItem.Click += new System.EventHandler(this.ClientsToolStripMenuItem_Click);
             // 
             // ReportsToolStripMenuItem
             // 
@@ -116,7 +125,7 @@ namespace GiftShopView
             // 
             // buttonCreateOrder
             // 
-            this.buttonCreateOrder.Location = new System.Drawing.Point(639, 63);
+            this.buttonCreateOrder.Location = new System.Drawing.Point(731, 63);
             this.buttonCreateOrder.Name = "buttonCreateOrder";
             this.buttonCreateOrder.Size = new System.Drawing.Size(149, 23);
             this.buttonCreateOrder.TabIndex = 1;
@@ -126,7 +135,7 @@ namespace GiftShopView
             // 
             // buttonTakeOrderInWork
             // 
-            this.buttonTakeOrderInWork.Location = new System.Drawing.Point(639, 114);
+            this.buttonTakeOrderInWork.Location = new System.Drawing.Point(731, 114);
             this.buttonTakeOrderInWork.Name = "buttonTakeOrderInWork";
             this.buttonTakeOrderInWork.Size = new System.Drawing.Size(149, 23);
             this.buttonTakeOrderInWork.TabIndex = 2;
@@ -136,7 +145,7 @@ namespace GiftShopView
             // 
             // buttonOrderReady
             // 
-            this.buttonOrderReady.Location = new System.Drawing.Point(639, 162);
+            this.buttonOrderReady.Location = new System.Drawing.Point(731, 162);
             this.buttonOrderReady.Name = "buttonOrderReady";
             this.buttonOrderReady.Size = new System.Drawing.Size(149, 23);
             this.buttonOrderReady.TabIndex = 3;
@@ -146,7 +155,7 @@ namespace GiftShopView
             // 
             // buttonPayOrder
             // 
-            this.buttonPayOrder.Location = new System.Drawing.Point(639, 214);
+            this.buttonPayOrder.Location = new System.Drawing.Point(731, 214);
             this.buttonPayOrder.Name = "buttonPayOrder";
             this.buttonPayOrder.Size = new System.Drawing.Size(149, 23);
             this.buttonPayOrder.TabIndex = 4;
@@ -156,7 +165,7 @@ namespace GiftShopView
             // 
             // buttonRef
             // 
-            this.buttonRef.Location = new System.Drawing.Point(639, 265);
+            this.buttonRef.Location = new System.Drawing.Point(731, 265);
             this.buttonRef.Name = "buttonRef";
             this.buttonRef.Size = new System.Drawing.Size(149, 23);
             this.buttonRef.TabIndex = 5;
@@ -172,10 +181,11 @@ namespace GiftShopView
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(0, 28);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(633, 321);
+            this.dataGridView.Size = new System.Drawing.Size(707, 321);
             this.dataGridView.TabIndex = 6;
             // 
             // FormMain
@@ -183,7 +193,7 @@ namespace GiftShopView
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 351);
+            this.ClientSize = new System.Drawing.Size(904, 351);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.buttonRef);
             this.Controls.Add(this.buttonPayOrder);
@@ -219,5 +229,6 @@ namespace GiftShopView
         private System.Windows.Forms.ToolStripMenuItem ListofOrdersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ProductsbyComponentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ListofProductsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ClientsToolStripMenuItem;
     }
 }

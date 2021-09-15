@@ -31,7 +31,7 @@
         </Field>
         <Field Name="Status">
           <DataField>Status</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>GiftShopBusinessLogic.Enums.OrderStatus</rd:TypeName>
         </Field>
         <Field Name="Sum">
           <DataField>Sum</DataField>
@@ -472,7 +472,7 @@
             <Top>2.24952cm</Top>
             <Left>0.3175cm</Left>
             <Height>1.14708cm</Height>
-            <Width>19.99807cm</Width>
+            <Width>19.99808cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
