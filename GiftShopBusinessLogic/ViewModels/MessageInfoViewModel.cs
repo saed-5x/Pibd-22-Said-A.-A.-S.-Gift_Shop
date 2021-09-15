@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using System.Runtime.Serialization;
+using GiftShopBusinessLogic.Attributes;
 
 namespace GiftShopBusinessLogic.ViewModels
 {
@@ -10,22 +11,23 @@ namespace GiftShopBusinessLogic.ViewModels
     public class MessageInfoViewModel
     {
         [DataMember]
+        [Column(title: "Number", width: 100, visible: false)]
         public string MessageId { get; set; }
 
-        [DisplayName("Sender")]
         [DataMember]
+        [Column(title: "Sender", width: 150)]
         public string SenderName { get; set; }
 
-        [DisplayName("Date of letter")]
         [DataMember]
+        [Column(title: "Date of letter", width: 100)]
         public DateTime DateDelivery { get; set; }
 
-        [DisplayName("Heading")]
         [DataMember]
+        [Column(title: "Heading", width: 150)]
         public string Subject { get; set; }
 
-        [DisplayName("Text")]
         [DataMember]
+        [Column(title: "Text", gridViewAutoSize: GridViewAutoSize.AllCells)]
         public string Body { get; set; }
     }
 }

@@ -42,11 +42,12 @@ namespace GiftShopView
             this.ProductsbyComponentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListofOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lettersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateOrder = new System.Windows.Forms.Button();
             this.buttonPayOrder = new System.Windows.Forms.Button();
             this.buttonRef = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.lettersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,8 @@ namespace GiftShopView
             this.DirectoriesToolStripMenuItem,
             this.ReportsToolStripMenuItem,
             this.startWorkToolStripMenuItem,
-            this.lettersToolStripMenuItem});
+            this.lettersToolStripMenuItem,
+            this.makeBackupToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1191, 24);
@@ -141,6 +143,13 @@ namespace GiftShopView
             this.startWorkToolStripMenuItem.Text = "Start work";
             this.startWorkToolStripMenuItem.Click += new System.EventHandler(this.StartworkToolStripMenuItem_Click);
             // 
+            // lettersToolStripMenuItem
+            // 
+            this.lettersToolStripMenuItem.Name = "lettersToolStripMenuItem";
+            this.lettersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.lettersToolStripMenuItem.Text = "Letters";
+            this.lettersToolStripMenuItem.Click += new System.EventHandler(this.lettersToolStripMenuItem_Click);
+            // 
             // buttonCreateOrder
             // 
             this.buttonCreateOrder.Location = new System.Drawing.Point(1079, 69);
@@ -186,12 +195,12 @@ namespace GiftShopView
             this.dataGridView.Size = new System.Drawing.Size(1063, 321);
             this.dataGridView.TabIndex = 6;
             // 
-            // lettersToolStripMenuItem
+            // makeBackupToolStripMenuItem
             // 
-            this.lettersToolStripMenuItem.Name = "lettersToolStripMenuItem";
-            this.lettersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.lettersToolStripMenuItem.Text = "Letters";
-            this.lettersToolStripMenuItem.Click += new System.EventHandler(this.lettersToolStripMenuItem_Click);
+            this.makeBackupToolStripMenuItem.Name = "makeBackupToolStripMenuItem";
+            this.makeBackupToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.makeBackupToolStripMenuItem.Text = "Make backup";
+            this.makeBackupToolStripMenuItem.Click += new System.EventHandler(this.makeBackupToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -234,5 +243,6 @@ namespace GiftShopView
         private System.Windows.Forms.ToolStripMenuItem artistsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startWorkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lettersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem makeBackupToolStripMenuItem;
     }
 }
