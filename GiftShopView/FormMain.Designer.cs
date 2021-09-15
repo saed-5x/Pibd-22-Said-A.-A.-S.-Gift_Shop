@@ -36,13 +36,13 @@ namespace GiftShopView
             this.ComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.artistsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListofProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductsbyComponentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListofOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateOrder = new System.Windows.Forms.Button();
-            this.buttonTakeOrderInWork = new System.Windows.Forms.Button();
-            this.buttonOrderReady = new System.Windows.Forms.Button();
             this.buttonPayOrder = new System.Windows.Forms.Button();
             this.buttonRef = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -54,10 +54,11 @@ namespace GiftShopView
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DirectoriesToolStripMenuItem,
-            this.ReportsToolStripMenuItem});
+            this.ReportsToolStripMenuItem,
+            this.startWorkToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(904, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1191, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -66,7 +67,8 @@ namespace GiftShopView
             this.DirectoriesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ComponentsToolStripMenuItem,
             this.ProductsToolStripMenuItem,
-            this.ClientsToolStripMenuItem});
+            this.ClientsToolStripMenuItem,
+            this.artistsToolStripMenuItem});
             this.DirectoriesToolStripMenuItem.Name = "DirectoriesToolStripMenuItem";
             this.DirectoriesToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.DirectoriesToolStripMenuItem.Text = "Directories";
@@ -91,6 +93,13 @@ namespace GiftShopView
             this.ClientsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ClientsToolStripMenuItem.Text = "Clients";
             this.ClientsToolStripMenuItem.Click += new System.EventHandler(this.ClientsToolStripMenuItem_Click);
+            // 
+            // artistsToolStripMenuItem
+            // 
+            this.artistsToolStripMenuItem.Name = "artistsToolStripMenuItem";
+            this.artistsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.artistsToolStripMenuItem.Text = "Artists";
+            this.artistsToolStripMenuItem.Click += new System.EventHandler(this.ArtistToolStripMenuItem_Click);
             // 
             // ReportsToolStripMenuItem
             // 
@@ -123,41 +132,28 @@ namespace GiftShopView
             this.ListofOrdersToolStripMenuItem.Text = "List of oreders";
             this.ListofOrdersToolStripMenuItem.Click += new System.EventHandler(this.ListofOrdersToolStripMenuItem_Click);
             // 
+            // startWorkToolStripMenuItem
+            // 
+            this.startWorkToolStripMenuItem.Name = "startWorkToolStripMenuItem";
+            this.startWorkToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.startWorkToolStripMenuItem.Text = "Start work";
+            this.startWorkToolStripMenuItem.Click += new System.EventHandler(this.StartworkToolStripMenuItem_Click);
+            // 
             // buttonCreateOrder
             // 
-            this.buttonCreateOrder.Location = new System.Drawing.Point(731, 63);
+            this.buttonCreateOrder.Location = new System.Drawing.Point(1079, 69);
             this.buttonCreateOrder.Name = "buttonCreateOrder";
-            this.buttonCreateOrder.Size = new System.Drawing.Size(149, 23);
+            this.buttonCreateOrder.Size = new System.Drawing.Size(87, 23);
             this.buttonCreateOrder.TabIndex = 1;
             this.buttonCreateOrder.Text = "Create order";
             this.buttonCreateOrder.UseVisualStyleBackColor = true;
             this.buttonCreateOrder.Click += new System.EventHandler(this.ButtonCreateOrder_Click);
             // 
-            // buttonTakeOrderInWork
-            // 
-            this.buttonTakeOrderInWork.Location = new System.Drawing.Point(731, 114);
-            this.buttonTakeOrderInWork.Name = "buttonTakeOrderInWork";
-            this.buttonTakeOrderInWork.Size = new System.Drawing.Size(149, 23);
-            this.buttonTakeOrderInWork.TabIndex = 2;
-            this.buttonTakeOrderInWork.Text = "Take order in work";
-            this.buttonTakeOrderInWork.UseVisualStyleBackColor = true;
-            this.buttonTakeOrderInWork.Click += new System.EventHandler(this.ButtonTakeOrderInWork_Click);
-            // 
-            // buttonOrderReady
-            // 
-            this.buttonOrderReady.Location = new System.Drawing.Point(731, 162);
-            this.buttonOrderReady.Name = "buttonOrderReady";
-            this.buttonOrderReady.Size = new System.Drawing.Size(149, 23);
-            this.buttonOrderReady.TabIndex = 3;
-            this.buttonOrderReady.Text = "Order ready";
-            this.buttonOrderReady.UseVisualStyleBackColor = true;
-            this.buttonOrderReady.Click += new System.EventHandler(this.ButtonOrderReady_Click);
-            // 
             // buttonPayOrder
             // 
-            this.buttonPayOrder.Location = new System.Drawing.Point(731, 214);
+            this.buttonPayOrder.Location = new System.Drawing.Point(1079, 171);
             this.buttonPayOrder.Name = "buttonPayOrder";
-            this.buttonPayOrder.Size = new System.Drawing.Size(149, 23);
+            this.buttonPayOrder.Size = new System.Drawing.Size(87, 23);
             this.buttonPayOrder.TabIndex = 4;
             this.buttonPayOrder.Text = "Pay order";
             this.buttonPayOrder.UseVisualStyleBackColor = true;
@@ -165,9 +161,9 @@ namespace GiftShopView
             // 
             // buttonRef
             // 
-            this.buttonRef.Location = new System.Drawing.Point(731, 265);
+            this.buttonRef.Location = new System.Drawing.Point(1079, 271);
             this.buttonRef.Name = "buttonRef";
-            this.buttonRef.Size = new System.Drawing.Size(149, 23);
+            this.buttonRef.Size = new System.Drawing.Size(87, 23);
             this.buttonRef.TabIndex = 5;
             this.buttonRef.Text = "Refresh list";
             this.buttonRef.UseVisualStyleBackColor = true;
@@ -185,7 +181,7 @@ namespace GiftShopView
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(707, 321);
+            this.dataGridView.Size = new System.Drawing.Size(1063, 321);
             this.dataGridView.TabIndex = 6;
             // 
             // FormMain
@@ -193,12 +189,10 @@ namespace GiftShopView
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(904, 351);
+            this.ClientSize = new System.Drawing.Size(1191, 351);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.buttonRef);
             this.Controls.Add(this.buttonPayOrder);
-            this.Controls.Add(this.buttonOrderReady);
-            this.Controls.Add(this.buttonTakeOrderInWork);
             this.Controls.Add(this.buttonCreateOrder);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
@@ -220,8 +214,6 @@ namespace GiftShopView
         private System.Windows.Forms.ToolStripMenuItem ComponentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ProductsToolStripMenuItem;
         private System.Windows.Forms.Button buttonCreateOrder;
-        private System.Windows.Forms.Button buttonTakeOrderInWork;
-        private System.Windows.Forms.Button buttonOrderReady;
         private System.Windows.Forms.Button buttonPayOrder;
         private System.Windows.Forms.Button buttonRef;
         private System.Windows.Forms.DataGridView dataGridView;
@@ -230,5 +222,7 @@ namespace GiftShopView
         private System.Windows.Forms.ToolStripMenuItem ProductsbyComponentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ListofProductsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ClientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem artistsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem startWorkToolStripMenuItem;
     }
 }

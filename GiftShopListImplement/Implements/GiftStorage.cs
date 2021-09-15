@@ -101,7 +101,7 @@ namespace GiftShopListImplement.Implements
         {
             gift.GiftName = model.GiftName;
             gift.Price = model.Price;
-            // remove the removed ones
+            // remove the removed ones.
             foreach (var key in gift.GiftComponents.Keys.ToList())
             {
                 if (!model.GiftComponents.ContainsKey(key))

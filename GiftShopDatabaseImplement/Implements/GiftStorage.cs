@@ -89,7 +89,7 @@ namespace GiftShopDatabaseImplement.Implements
                     try
                     {
                         Gift gift = CreateModel(model, new Gift());
-                        context.Gifts.Add(gift);
+                        context.Gifts.Add(gift);                       
                         context.SaveChanges();
                         CreateModel(model, gift, context);
                         transaction.Commit();
@@ -114,7 +114,7 @@ namespace GiftShopDatabaseImplement.Implements
                         var element = context.Gifts.FirstOrDefault(rec => rec.Id == model.Id);
                         if (element == null)
                         {
-                            throw new Exception("Item  not found");
+                            throw new Exception("Item not found");
                         }
                         CreateModel(model, element, context);
                         context.SaveChanges();
@@ -146,7 +146,7 @@ namespace GiftShopDatabaseImplement.Implements
             }
         }
 
-        private Gift CreateModel(GiftBindingModel model, Gift gift)
+        private Gift CreateModel(GiftBindingModel model, Gift gift) 
         {
             gift.GiftName = model.GiftName;
             gift.Price = model.Price;

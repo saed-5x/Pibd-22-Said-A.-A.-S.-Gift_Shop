@@ -39,9 +39,9 @@ namespace GiftShopView
             // 
             // buttonSaveToExcel
             // 
-            this.buttonSaveToExcel.Location = new System.Drawing.Point(12, 12);
+            this.buttonSaveToExcel.Location = new System.Drawing.Point(14, 15);
             this.buttonSaveToExcel.Name = "buttonSaveToExcel";
-            this.buttonSaveToExcel.Size = new System.Drawing.Size(159, 21);
+            this.buttonSaveToExcel.Size = new System.Drawing.Size(159, 27);
             this.buttonSaveToExcel.TabIndex = 2;
             this.buttonSaveToExcel.Text = "Save to Excel";
             this.buttonSaveToExcel.UseVisualStyleBackColor = true;
@@ -55,7 +55,7 @@ namespace GiftShopView
             this.GiftColumn,
             this.ComponentColumn,
             this.CountColumn});
-            this.dataGridView.Location = new System.Drawing.Point(12, 44);
+            this.dataGridView.Location = new System.Drawing.Point(9, 59);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 24;
@@ -86,7 +86,7 @@ namespace GiftShopView
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(540, 450);
+            this.ClientSize = new System.Drawing.Size(535, 463);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.buttonSaveToExcel);
             this.Name = "FormReportComponentGifts";
