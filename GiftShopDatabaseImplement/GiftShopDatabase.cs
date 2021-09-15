@@ -1,4 +1,7 @@
-﻿using GiftShopDatabaseImplement.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using GiftShopDatabaseImplement.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GiftShopDatabaseImplement
@@ -9,7 +12,7 @@ namespace GiftShopDatabaseImplement
         {
             if (optionsBuilder.IsConfigured == false)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-68CGV18\SQLEXPRESS;Initial Catalog=GiftShopDatabase;Integrated Security=True;MultipleActiveResultSets=True;");
+                optionsBuilder.UseSqlServer(@"Data Source=SAEDX\SQLEXPRESS;Initial Catalog=GiftShopDatabase;Integrated Security=True;MultipleActiveResultSets=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }

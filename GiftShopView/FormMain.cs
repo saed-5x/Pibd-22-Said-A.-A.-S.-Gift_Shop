@@ -1,4 +1,11 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.BusinessLogic;
@@ -10,11 +17,14 @@ namespace GiftShopView
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        private readonly OrderLogic orderLogic;
-        public FormMain(OrderLogic Logic)
+        private readonly OrderLogic _orderLogic;
+
+        private readonly ReportLogic _reportLogic;
+        public FormMain(OrderLogic orderLogic, ReportLogic reportLogic)
         {
             InitializeComponent();
-            this.orderLogic = Logic;
+            this._orderLogic = orderLogic;
+            this._reportLogic = reportLogic;
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -24,14 +34,13 @@ namespace GiftShopView
         {
             try
             {
-                var list = orderLogic.Read(null);
+                var list = _orderLogic.Read(null);
                 if (list != null)
                 {
                     dataGridView.DataSource = list;
                     dataGridView.Columns[0].Visible = false;
                     dataGridView.Columns[1].Visible = false;
                     dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView.Columns[3].Visible = false;
                 }
             }
             catch (Exception ex)
@@ -62,7 +71,7 @@ namespace GiftShopView
                 int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
                 try
                 {
-                    orderLogic.TakeOrderInWork(new ChangeStatusBindingModel { OrderId = id });
+                    _orderLogic.TakeOrderInWork(new ChangeStatusBindingModel { OrderId = id });
                     LoadData();
                 }
                 catch (Exception ex)
@@ -79,7 +88,7 @@ namespace GiftShopView
                 int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
                 try
                 {
-                    orderLogic.FinishOrder(new ChangeStatusBindingModel { OrderId = id });
+                    _orderLogic.FinishOrder(new ChangeStatusBindingModel { OrderId = id });
                     LoadData();
                 }
                 catch (Exception ex)
@@ -96,7 +105,7 @@ namespace GiftShopView
                 int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
                 try
                 {
-                    orderLogic.PayOrder(new ChangeStatusBindingModel { OrderId = id });
+                    _orderLogic.PayOrder(new ChangeStatusBindingModel { OrderId = id });
                     LoadData();
                 }
                 catch (Exception ex)
@@ -106,9 +115,35 @@ namespace GiftShopView
             }
         }
 
-        private void ButtonRefresh_Click(object sender, EventArgs e)
+        private void ButtonRef_Click(object sender, EventArgs e)
         {
             LoadData();
         }
+
+        private void ListofProductsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    _reportLogic.SaveGiftsToWordFile(new ReportBindingModel { FileName = dialog.FileName });
+                    MessageBox.Show("Completed", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void ListofOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormReportOrders>();
+            form.ShowDialog();
+        }
+
+        private void ProductsByComponentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormReportComponentGifts>();
+            form.ShowDialog();
+        }
+
+
     }
 }

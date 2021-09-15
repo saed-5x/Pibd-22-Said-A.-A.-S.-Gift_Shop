@@ -1,10 +1,12 @@
-﻿using GiftShopBusinessLogic.Enums;
-using GiftShopFileImplement.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
+using GiftShopBusinessLogic.Enums;
+using GiftShopFileImplement.Models;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace GiftShopFileImplement
 {
@@ -77,12 +79,12 @@ namespace GiftShopFileImplement
                     OrderStatus orderStatus = 0;
                     DateTime? dateImplement = null;
 
-                    if (elem.Element("DateImplement").Value != "")
+                    if (elem.Element("DateImplement").Value != "") 
                     {
                         dateImplement = Convert.ToDateTime(elem.Element("DateImplement").Value);
                     }
 
-                    switch (elem.Element("Status").Value)
+                    switch (elem.Element("Status").Value) 
                     {
                         case "Accepted":
                             orderStatus = OrderStatus.Accepted;
@@ -197,8 +199,6 @@ namespace GiftShopFileImplement
                 }
                 XDocument xDocument = new XDocument(xElement);
                 xDocument.Save(GiftFileName);
-
-
             }
         }
     }

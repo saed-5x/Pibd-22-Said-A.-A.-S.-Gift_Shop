@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopListImplement", "Gi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopFileImplement", "GiftShopFileImplement\GiftShopFileImplement.csproj", "{DBB24DD3-A6A3-4176-B194-F27439E75C5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftShopDatabaseImplement", "GiftShopDatabaseImplement\GiftShopDatabaseImplement.csproj", "{20790FFF-57F0-4D9A-9087-C6280D32CAEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftShopDatabaseImplement", "GiftShopDatabaseImplement\GiftShopDatabaseImplement.csproj", "{20790FFF-57F0-4D9A-9087-C6280D32CAEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

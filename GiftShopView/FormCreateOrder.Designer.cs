@@ -44,27 +44,27 @@ namespace GiftShopView
             this.labelProduct.AutoSize = true;
             this.labelProduct.Location = new System.Drawing.Point(13, 13);
             this.labelProduct.Name = "labelProduct";
-            this.labelProduct.Size = new System.Drawing.Size(47, 13);
+            this.labelProduct.Size = new System.Drawing.Size(50, 13);
             this.labelProduct.TabIndex = 0;
-            this.labelProduct.Text = "Product:";
+            this.labelProduct.Text = "Product :";
             // 
             // labelCount
             // 
             this.labelCount.AutoSize = true;
             this.labelCount.Location = new System.Drawing.Point(12, 46);
             this.labelCount.Name = "labelCount";
-            this.labelCount.Size = new System.Drawing.Size(47, 13);
+            this.labelCount.Size = new System.Drawing.Size(52, 13);
             this.labelCount.TabIndex = 1;
-            this.labelCount.Text = "Number:";
+            this.labelCount.Text = "Quantity :";
             // 
             // labelSum
             // 
             this.labelSum.AutoSize = true;
             this.labelSum.Location = new System.Drawing.Point(13, 72);
             this.labelSum.Name = "labelSum";
-            this.labelSum.Size = new System.Drawing.Size(46, 13);
+            this.labelSum.Size = new System.Drawing.Size(34, 13);
             this.labelSum.TabIndex = 2;
-            this.labelSum.Text = "Amount:";
+            this.labelSum.Text = "Sum :";
             // 
             // comboBoxGift
             // 
@@ -125,7 +125,7 @@ namespace GiftShopView
             this.Controls.Add(this.labelCount);
             this.Controls.Add(this.labelProduct);
             this.Name = "FormCreateOrder";
-            this.Text = "Order";
+            this.Text = "Orders";
             this.Load += new System.EventHandler(this.FormCreateOrder_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

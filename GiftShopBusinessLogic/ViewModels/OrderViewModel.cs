@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using GiftShopBusinessLogic.Enums;
 using System.ComponentModel;
 
@@ -12,19 +14,19 @@ namespace GiftShopBusinessLogic.ViewModels
         [DisplayName("Product")]
 
         public string GiftName { get; set; }
-        [DisplayName("Number")]
+        [DisplayName("Quantity")]
 
         public int Count { get; set; }
-        [DisplayName("Amount")]
+        [DisplayName("Sum")]
 
         public decimal Sum { get; set; }
         [DisplayName("Status")]
 
         public OrderStatus Status { get; set; }
-        [DisplayName("Date of creation")]
+        [DisplayName("Date Create")]
 
         public DateTime DateCreate { get; set; }
-        [DisplayName("Date of completion")]
+        [DisplayName("Date Implement")]
 
         public DateTime? DateImplement { get; set; }
     }

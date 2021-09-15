@@ -1,10 +1,10 @@
-﻿using GiftShopBusinessLogic.BindingModels;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.Interfaces;
 using GiftShopBusinessLogic.ViewModels;
 using GiftShopFileImplement.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace GiftShopFileImplement.Implements
 {
@@ -28,7 +28,8 @@ namespace GiftShopFileImplement.Implements
             {
                 return null;
             }
-            return source.Orders.Where(rec => rec.GiftId.ToString().Contains(model.GiftId.ToString())).Select(CreateModel).ToList();
+
+            return source.Orders.Where((rec => rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo)).Select(CreateModel).ToList();
         }
 
         public OrderViewModel GetElement(OrderBindingModel model)
@@ -88,12 +89,12 @@ namespace GiftShopFileImplement.Implements
             {
                 Id = order.Id,
                 GiftId = order.GiftId,
-                GiftName = source.Gifts.FirstOrDefault(rec => rec.Id == order.GiftId)?.GiftName,
                 Count = order.Count,
+                DateCreate = order.DateCreate,
+                DateImplement = order.DateImplement,
                 Sum = order.Sum,
                 Status = order.Status,
-                DateCreate = order.DateCreate,
-                DateImplement = order.DateImplement
+                GiftName = source.Gifts.FirstOrDefault(rec => rec.Id == order.GiftId)?.GiftName
             };
         }
     }

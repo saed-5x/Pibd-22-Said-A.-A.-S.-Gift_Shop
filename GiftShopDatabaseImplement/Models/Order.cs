@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using GiftShopBusinessLogic.Enums;
 using System.ComponentModel.DataAnnotations;
@@ -10,6 +11,8 @@ namespace GiftShopDatabaseImplement.Models
         public int Id { get; set; }
 
         public int GiftId { get; set; }
+
+        public virtual Gift Gift { get; set; }
 
         [Required]
         public int Count { get; set; }

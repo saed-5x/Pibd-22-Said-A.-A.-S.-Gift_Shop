@@ -1,5 +1,6 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Linq;
 using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.Interfaces;
@@ -100,6 +101,7 @@ namespace GiftShopListImplement.Implements
         {
             gift.GiftName = model.GiftName;
             gift.Price = model.Price;
+            // remove the removed ones.
             foreach (var key in gift.GiftComponents.Keys.ToList())
             {
                 if (!model.GiftComponents.ContainsKey(key))
@@ -107,7 +109,7 @@ namespace GiftShopListImplement.Implements
                     gift.GiftComponents.Remove(key);
                 }
             }
-
+            // update existing ones and add new ones
             foreach (var component in model.GiftComponents)
             {
                 if (gift.GiftComponents.ContainsKey(component.Key))
@@ -123,6 +125,7 @@ namespace GiftShopListImplement.Implements
         }
         private GiftViewModel CreateModel(Gift gift)
         {
+            // it is required to additionally get a list of components for a product with names and their quantity
             Dictionary<int, (string, int)> giftComponents = new Dictionary<int, (string, int)>();
             foreach (var pc in gift.GiftComponents)
             {

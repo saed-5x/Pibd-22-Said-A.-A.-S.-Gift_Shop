@@ -1,10 +1,10 @@
-﻿using GiftShopBusinessLogic.BindingModels;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.Interfaces;
 using GiftShopBusinessLogic.ViewModels;
 using GiftShopFileImplement.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace GiftShopFileImplement.Implements
 {

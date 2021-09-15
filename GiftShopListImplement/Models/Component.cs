@@ -1,4 +1,8 @@
-﻿namespace GiftShopListImplement.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace GiftShopListImplement.Models
 {
     public class Component
     {

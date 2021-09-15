@@ -1,3 +1,4 @@
+﻿
 namespace GiftShopView
 {
     partial class FormGiftComponent
@@ -41,18 +42,18 @@ namespace GiftShopView
             this.labelComponent.AutoSize = true;
             this.labelComponent.Location = new System.Drawing.Point(22, 22);
             this.labelComponent.Name = "labelComponent";
-            this.labelComponent.Size = new System.Drawing.Size(64, 13);
+            this.labelComponent.Size = new System.Drawing.Size(61, 13);
             this.labelComponent.TabIndex = 0;
-            this.labelComponent.Text = "Component:";
+            this.labelComponent.Text = "Compoent :";
             // 
             // labelCount
             // 
             this.labelCount.AutoSize = true;
             this.labelCount.Location = new System.Drawing.Point(22, 57);
             this.labelCount.Name = "labelCount";
-            this.labelCount.Size = new System.Drawing.Size(47, 13);
+            this.labelCount.Size = new System.Drawing.Size(52, 13);
             this.labelCount.TabIndex = 1;
-            this.labelCount.Text = "Number:";
+            this.labelCount.Text = "Quantity :";
             // 
             // textBoxCount
             // 
@@ -94,7 +95,7 @@ namespace GiftShopView
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(385, 145);
+            this.ClientSize = new System.Drawing.Size(311, 130);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.comboBoxComponent);

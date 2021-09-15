@@ -40,9 +40,9 @@ namespace GiftShopView
             this.labelName.AutoSize = true;
             this.labelName.Location = new System.Drawing.Point(14, 16);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(38, 13);
+            this.labelName.Size = new System.Drawing.Size(41, 13);
             this.labelName.TabIndex = 0;
-            this.labelName.Text = "Name:";
+            this.labelName.Text = "Name :";
             // 
             // textBoxName
             // 

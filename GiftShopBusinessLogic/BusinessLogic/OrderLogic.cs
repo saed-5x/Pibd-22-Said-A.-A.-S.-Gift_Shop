@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using GiftShopBusinessLogic.Enums;
 using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.Interfaces;
@@ -50,7 +51,7 @@ namespace GiftShopBusinessLogic.BusinessLogic
             }
             if (order.Status != OrderStatus.Accepted)
             {
-                throw new Exception("Order not in status \"Accepted\"");
+                throw new Exception("The order is not in the status \"Accepted\"");
             }
             _orderStorage.Update(new OrderBindingModel
             {
@@ -73,7 +74,7 @@ namespace GiftShopBusinessLogic.BusinessLogic
             }
             if (order.Status != OrderStatus.Performed)
             {
-                throw new Exception("Order not in status  \"Performed\"");
+                throw new Exception("The order is not in the status \"Performed\"");
             }
             _orderStorage.Update(new OrderBindingModel
             {
@@ -96,9 +97,9 @@ namespace GiftShopBusinessLogic.BusinessLogic
             }
             if (order.Status != OrderStatus.Ready)
             {
-                throw new Exception("Order not in status \"Ready\"");
+                throw new Exception("The order is not in the status \"Ready\"");
             }
-            _orderStorage.Update(new OrderBindingModel
+            _orderStorage.Update(new OrderBindingModel 
             {
                 Id = order.Id,
                 GiftId = order.GiftId,

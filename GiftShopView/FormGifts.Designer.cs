@@ -1,3 +1,4 @@
+﻿
 namespace GiftShopView
 {
     partial class FormGifts
@@ -38,11 +39,12 @@ namespace GiftShopView
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(1, 2);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -51,7 +53,7 @@ namespace GiftShopView
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(512, 22);
+            this.buttonAdd.Location = new System.Drawing.Point(506, 22);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 1;
@@ -61,7 +63,7 @@ namespace GiftShopView
             // 
             // buttonUpd
             // 
-            this.buttonUpd.Location = new System.Drawing.Point(512, 61);
+            this.buttonUpd.Location = new System.Drawing.Point(506, 61);
             this.buttonUpd.Name = "buttonUpd";
             this.buttonUpd.Size = new System.Drawing.Size(75, 23);
             this.buttonUpd.TabIndex = 2;
@@ -71,7 +73,7 @@ namespace GiftShopView
             // 
             // buttonDel
             // 
-            this.buttonDel.Location = new System.Drawing.Point(512, 105);
+            this.buttonDel.Location = new System.Drawing.Point(506, 105);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(75, 23);
             this.buttonDel.TabIndex = 3;
@@ -81,7 +83,7 @@ namespace GiftShopView
             // 
             // buttonRef
             // 
-            this.buttonRef.Location = new System.Drawing.Point(512, 143);
+            this.buttonRef.Location = new System.Drawing.Point(506, 143);
             this.buttonRef.Name = "buttonRef";
             this.buttonRef.Size = new System.Drawing.Size(75, 23);
             this.buttonRef.TabIndex = 4;
@@ -94,7 +96,7 @@ namespace GiftShopView
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(604, 480);
+            this.ClientSize = new System.Drawing.Size(594, 450);
             this.Controls.Add(this.buttonRef);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonUpd);
@@ -115,6 +117,5 @@ namespace GiftShopView
         private System.Windows.Forms.Button buttonUpd;
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.Button buttonRef;
-
     }
 }

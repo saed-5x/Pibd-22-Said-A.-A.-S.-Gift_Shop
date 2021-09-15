@@ -15,11 +15,11 @@ namespace GiftShopDatabaseImplement.Implements
         {
             using (var context = new GiftShopDatabase())
             {
-                return context.Orders.Select(rec => new OrderViewModel
+                return context.Orders.Include(rec => rec.Gift).Select(rec => new OrderViewModel
                 {
                     Id = rec.Id,
                     GiftId = rec.GiftId,
-                    GiftName = context.Gifts.Include(x => x.Order).FirstOrDefault(x => x.Id == rec.GiftId).GiftName,
+                    GiftName = rec.Gift.GiftName,
                     Count = rec.Count,
                     Sum = rec.Sum,
                     Status = rec.Status,
@@ -35,19 +35,22 @@ namespace GiftShopDatabaseImplement.Implements
             {
                 return null;
             }
+
             using (var context = new GiftShopDatabase())
             {
-                return context.Orders
-                .Where(rec => rec.Id.Equals(model.Id)).Select(rec => new OrderViewModel
+                return context.Orders.Include(rec => rec.Gift)
+                .Where(rec => (!model.DateFrom.HasValue && !model.DateTo.HasValue && rec.DateCreate == model.DateCreate) ||
+                (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate.Date >= model.DateFrom.Value.Date && rec.DateCreate.Date <= model.DateTo.Value.Date))
+                .Select(rec => new OrderViewModel
                 {
                     Id = rec.Id,
                     GiftId = rec.GiftId,
-                    GiftName = context.Gifts.Include(x => x.Order).FirstOrDefault(x => x.Id == rec.GiftId).GiftName,
+                    GiftName = rec.Gift.GiftName,
                     Count = rec.Count,
                     Sum = rec.Sum,
                     Status = rec.Status,
                     DateCreate = rec.DateCreate,
-                    DateImplement = rec.DateImplement
+                    DateImplement = rec.DateImplement,
                 })
                 .ToList();
             }
@@ -61,14 +64,14 @@ namespace GiftShopDatabaseImplement.Implements
             }
             using (var context = new GiftShopDatabase())
             {
-                var order = context.Orders
+                var order = context.Orders.Include(rec => rec.Gift)
                 .FirstOrDefault(rec => rec.Id == model.Id);
                 return order != null ?
                 new OrderViewModel
                 {
                     Id = order.Id,
                     GiftId = order.GiftId,
-                    GiftName = context.Gifts.Include(x => x.Order).FirstOrDefault(x => x.Id == order.GiftId)?.GiftName,
+                    GiftName = order.Gift.GiftName,
                     Count = order.Count,
                     Sum = order.Sum,
                     Status = order.Status,

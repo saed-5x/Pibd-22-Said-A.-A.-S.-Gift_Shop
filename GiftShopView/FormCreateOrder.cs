@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiftShopBusinessLogic.BindingModels;
 using GiftShopBusinessLogic.BusinessLogic;
@@ -26,7 +33,7 @@ namespace GiftShopView
             try
             {
                 var list = _logicP.Read(null);
-                foreach (var p in list)
+                foreach (var p in list) 
                 {
                     comboBoxGift.DisplayMember = "GiftName";
                     comboBoxGift.ValueMember = "Id";
@@ -89,7 +96,7 @@ namespace GiftShopView
                     Count = Convert.ToInt32(textBoxCount.Text),
                     Sum = Convert.ToDecimal(textBoxSum.Text)
                 });
-                MessageBox.Show("Save was successful", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Saving was successful", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
             }
