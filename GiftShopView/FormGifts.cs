@@ -77,7 +77,7 @@ namespace GiftShopView
         {
             if (dataGridView.SelectedRows.Count == 1)
             {
-                if (MessageBox.Show("Delete entry", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Delete entry", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
                     try

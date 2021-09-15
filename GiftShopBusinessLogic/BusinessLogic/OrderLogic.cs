@@ -38,7 +38,8 @@ namespace GiftShopBusinessLogic.BusinessLogic
                 Count = model.Count,
                 Sum = model.Sum,
                 DateCreate = DateTime.Now,
-                Status = OrderStatus.Accepted
+                Status = OrderStatus.Accepted,
+                ClientId = model.ClientId
             });
         }
 
@@ -61,7 +62,8 @@ namespace GiftShopBusinessLogic.BusinessLogic
                 Sum = order.Sum,
                 DateCreate = order.DateCreate,
                 DateImplement = DateTime.Now,
-                Status = OrderStatus.Performed
+                Status = OrderStatus.Performed,
+                ClientId = order.ClientId
             });
         }
 
@@ -84,7 +86,8 @@ namespace GiftShopBusinessLogic.BusinessLogic
                 Sum = order.Sum,
                 DateCreate = order.DateCreate,
                 DateImplement = order.DateImplement,
-                Status = OrderStatus.Ready
+                Status = OrderStatus.Ready,
+                ClientId = order.ClientId
             });
         }
 
@@ -107,7 +110,8 @@ namespace GiftShopBusinessLogic.BusinessLogic
                 Sum = order.Sum,
                 DateCreate = order.DateCreate,
                 DateImplement = order.DateImplement,
-                Status = OrderStatus.Paid
+                Status = OrderStatus.Paid,
+                ClientId = order.ClientId
             });
         }
     }

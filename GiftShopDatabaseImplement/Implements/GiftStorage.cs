@@ -89,7 +89,7 @@ namespace GiftShopDatabaseImplement.Implements
                     try
                     {
                         Gift gift = CreateModel(model, new Gift());
-                        context.Gifts.Add(gift);                       
+                        context.Gifts.Add(gift);
                         context.SaveChanges();
                         CreateModel(model, gift, context);
                         transaction.Commit();
@@ -114,7 +114,7 @@ namespace GiftShopDatabaseImplement.Implements
                         var element = context.Gifts.FirstOrDefault(rec => rec.Id == model.Id);
                         if (element == null)
                         {
-                            throw new Exception("Item not found");
+                            throw new Exception("Item  not found");
                         }
                         CreateModel(model, element, context);
                         context.SaveChanges();
@@ -146,7 +146,7 @@ namespace GiftShopDatabaseImplement.Implements
             }
         }
 
-        private Gift CreateModel(GiftBindingModel model, Gift gift) 
+        private Gift CreateModel(GiftBindingModel model, Gift gift)
         {
             gift.GiftName = model.GiftName;
             gift.Price = model.Price;
@@ -160,10 +160,10 @@ namespace GiftShopDatabaseImplement.Implements
             if (model.Id.HasValue)
             {
                 var productComponents = context.GiftComponents.Where(rec => rec.GiftId == model.Id.Value).ToList();
-                // удалили те, которых нет в модели
+                // removed those that are not in the model
                 context.GiftComponents.RemoveRange(productComponents.Where(rec => !model.GiftComponents.ContainsKey(rec.ComponentId)).ToList());
                 context.SaveChanges();
-                // обновили количество у существующих записей
+                // updated the number of existing records
                 foreach (var updateComponent in productComponents)
                 {
                     updateComponent.Count = model.GiftComponents[updateComponent.ComponentId].Item2;
@@ -171,7 +171,7 @@ namespace GiftShopDatabaseImplement.Implements
                 }
                 context.SaveChanges();
             }
-            // добавили новые
+            // added new ones
             foreach (var pc in model.GiftComponents)
             {
                 context.GiftComponents.Add(new GiftComponent

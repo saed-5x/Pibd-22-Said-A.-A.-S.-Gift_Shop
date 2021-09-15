@@ -1,4 +1,8 @@
-﻿namespace GiftShopBusinessLogic.Enums
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace GiftShopBusinessLogic.Enums
 {
     public enum OrderStatus
     {

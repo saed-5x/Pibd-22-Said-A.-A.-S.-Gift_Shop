@@ -29,7 +29,10 @@ namespace GiftShopFileImplement.Implements
                 return null;
             }
 
-            return source.Orders.Where((rec => rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo)).Select(CreateModel).ToList();
+            return source.Orders
+                 .Where(rec => (model.ClientId.HasValue && rec.ClientId == model.ClientId) || (!model.DateFrom.HasValue && !model.DateTo.HasValue && rec.DateCreate == model.DateCreate) ||
+                 (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate.Date >= model.DateFrom.Value.Date && rec.DateCreate.Date <= model.DateTo.Value.Date))
+                 .Select(CreateModel).ToList();
         }
 
         public OrderViewModel GetElement(OrderBindingModel model)
@@ -75,6 +78,7 @@ namespace GiftShopFileImplement.Implements
         private Order CreateModel(OrderBindingModel model, Order order)
         {
             order.GiftId = model.GiftId;
+            order.ClientId = model.ClientId.Value;
             order.Count = model.Count;
             order.Sum = model.Sum;
             order.Status = model.Status;
@@ -89,12 +93,14 @@ namespace GiftShopFileImplement.Implements
             {
                 Id = order.Id,
                 GiftId = order.GiftId,
+                ClientId = order.ClientId,
                 Count = order.Count,
                 DateCreate = order.DateCreate,
                 DateImplement = order.DateImplement,
                 Sum = order.Sum,
                 Status = order.Status,
-                GiftName = source.Gifts.FirstOrDefault(rec => rec.Id == order.GiftId)?.GiftName
+                GiftName = source.Gifts.FirstOrDefault(rec => rec.Id == order.GiftId)?.GiftName,
+                ClientFIO = source.Clients.FirstOrDefault(rec => rec.Id == order.ClientId)?.ClientFIO
             };
         }
     }
