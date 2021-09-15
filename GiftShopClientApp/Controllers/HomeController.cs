@@ -122,7 +122,7 @@ namespace GiftShopClientApp.Controllers
 
             APIClient.PostRequest("api/main/createorder", new CreateOrderBindingModel
             {
-                ClientId = (int)Program.Client.Id,
+                ClientId = Program.Client.Id,
                 GiftId = gift,
                 Count = count,
                 Sum = sum
@@ -136,6 +136,15 @@ namespace GiftShopClientApp.Controllers
         {
             GiftViewModel prod = APIClient.GetRequest<GiftViewModel>($"api/main/getgift?giftId={gift}");
             return count * prod.Price;
+        }
+
+        public IActionResult Mails()
+        {
+            if (Program.Client == null)
+            {
+                return Redirect("~/Home/Enter");
+            }
+            return View(APIClient.GetRequest<List<MessageInfoViewModel>>($"api/client/GetMessages?clientId={Program.Client.Id}"));
         }
     }
 }

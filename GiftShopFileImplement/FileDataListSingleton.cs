@@ -25,6 +25,9 @@ namespace GiftShopFileImplement
 
         private readonly string ImplementerFileName = "Implementer.xml";
 
+        private readonly string MessageInfoFileName = "MessageInfo.xml";
+
+
         public List<Component> Components { get; set; }
 
         public List<Order> Orders { get; set; }
@@ -35,6 +38,8 @@ namespace GiftShopFileImplement
 
         public List<Implementer> Implementers { get; set; }
 
+        public List<MessageInfo> MessageInfoes { get; set; }
+
         private FileDataListSingleton()
         {
             Components = LoadComponents();
@@ -42,6 +47,7 @@ namespace GiftShopFileImplement
             Gifts = LoadGifts();
             Clients = LoadClients();
             Implementers = LoadImplementers();
+            MessageInfoes = LoadMessageInfoes();
         }
 
         public static FileDataListSingleton GetInstance()
@@ -60,6 +66,7 @@ namespace GiftShopFileImplement
             SaveGifts();
             SaveClients();
             SaveImplementers();
+            SaveMessageInfoes();
         }
 
         private List<Component> LoadComponents()
@@ -195,6 +202,50 @@ namespace GiftShopFileImplement
                 }
             }
             return list;
+        }
+
+        private List<MessageInfo> LoadMessageInfoes()
+        {
+            var list = new List<MessageInfo>();
+            if (File.Exists(MessageInfoFileName))
+            {
+                XDocument xDocument = XDocument.Load(MessageInfoFileName);
+                var xElements = xDocument.Root.Elements("MessageInfo").ToList();
+
+                foreach (var elem in xElements)
+                {
+                    list.Add(new MessageInfo
+                    {
+                        MessageId = elem.Attribute("Id").Value,
+                        ClientId = Convert.ToInt32(elem.Element("ClientId").Value),
+                        SenderName = elem.Element("ClientId").Value,
+                        Subject = elem.Element("Subject").Value,
+                        Body = elem.Element("Body").Value,
+                        DateDelivery = Convert.ToDateTime(elem.Element("DateDelivery").Value)
+                    });
+                }
+            }
+            return list;
+        }
+
+        private void SaveMessageInfoes()
+        {
+            if (MessageInfoes != null)
+            {
+                var xElement = new XElement("MessageInfo");
+                foreach (var messageInfo in MessageInfoes)
+                {
+                    xElement.Add(new XElement("MessageInfo",
+                    new XAttribute("MessageId", messageInfo.MessageId),
+                    new XElement("Subject", messageInfo.Subject),
+                    new XElement("SenderName", messageInfo.SenderName),
+                    new XElement("Body", messageInfo.Body),
+                    new XElement("ClientId", messageInfo.ClientId),
+                    new XElement("DateDelivery", messageInfo.DateDelivery)));
+                }
+                XDocument xDocument = new XDocument(xElement);
+                xDocument.Save(MessageInfoFileName);
+            }
         }
 
         private void SaveComponents()
