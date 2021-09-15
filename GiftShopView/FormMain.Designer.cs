@@ -46,6 +46,7 @@ namespace GiftShopView
             this.buttonPayOrder = new System.Windows.Forms.Button();
             this.buttonRef = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.lettersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,8 @@ namespace GiftShopView
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DirectoriesToolStripMenuItem,
             this.ReportsToolStripMenuItem,
-            this.startWorkToolStripMenuItem});
+            this.startWorkToolStripMenuItem,
+            this.lettersToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1191, 24);
@@ -184,6 +186,13 @@ namespace GiftShopView
             this.dataGridView.Size = new System.Drawing.Size(1063, 321);
             this.dataGridView.TabIndex = 6;
             // 
+            // lettersToolStripMenuItem
+            // 
+            this.lettersToolStripMenuItem.Name = "lettersToolStripMenuItem";
+            this.lettersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.lettersToolStripMenuItem.Text = "Letters";
+            this.lettersToolStripMenuItem.Click += new System.EventHandler(this.lettersToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,5 +233,6 @@ namespace GiftShopView
         private System.Windows.Forms.ToolStripMenuItem ClientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem artistsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startWorkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lettersToolStripMenuItem;
     }
 }
